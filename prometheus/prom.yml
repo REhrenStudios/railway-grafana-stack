@@ -5,7 +5,11 @@ scrape_configs:
   - job_name: 'prometheus'
     static_configs:
       - targets: ['localhost:9090']
-
+  - job_name: 'echo-backend'
+    scrape_interval: 15s
+    static_configs:
+      - targets: ['echo-api-production-4873.up.railway.app']
+    scheme: https
   # - job_name: 'example_api'
   #   scheme: http
   #   static_configs:
